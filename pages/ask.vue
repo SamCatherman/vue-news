@@ -1,7 +1,6 @@
 <template>
   <!-- 3)display items component -->
   <div>
-    <h1>Ask</h1>
     <Items>
     </Items>
   </div>
