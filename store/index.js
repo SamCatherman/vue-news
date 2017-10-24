@@ -14,14 +14,13 @@ export const mutations = {
   }
 }
 export const actions = {
-  async LOAD_ITEMS({commit}){
+  async LOAD_ITEMS({commit}, dataUrl){
     /*
-    / -> topstories.json
     /new -> newstories.json
     /ask -> askstories.json
     */
 
-    const response = await axios.get("topstories.json")
+    const response = await axios.get(dataUrl)
     const ids = response.data
     const firstTenIds = ids.slice(0, 10)
 
