@@ -14,12 +14,18 @@ export const mutations = {
   }
 }
 export const actions = {
-  async nuxtServerInit({commit}){
+  async LOAD_ITEMS({commit}){
+    /*
+    / -> topstories.json
+    /new -> newstories.json
+    /ask -> askstories.json
+    */
+
     const response = await axios.get("topstories.json")
     const ids = response.data
-    const tenIds = ids.slice(0, 10)
+    const firstTenIds = ids.slice(0, 10)
 
-    const itemsPromises = tenIds.map(id => axios.get(`item/${id}.json`))
+    const itemsPromises = firstTenIds.map(id => axios.get(`item/${id}.json`))
     const itemsResponses = await Promise.all(itemsPromises)
     const items = itemsResponses.map(res => res.data)
 
