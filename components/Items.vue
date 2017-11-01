@@ -17,8 +17,8 @@
        </div>
        <template v-if="item.descendants">
          <div class="comments">
-           {{item.descendants}} comments
-         </div>
+            <nuxt-link :to="'/item/' + item.id">{{item.descendants}} comments</nuxt-link>
+          </div>
        </template>
      </li>
    </ul>
@@ -57,6 +57,7 @@
   .comments{
     grid-row: 3/-1;
     grid-column: 2/6;
+    align-self: center;
   }
   .details{
     grid-row: 3/-1;
