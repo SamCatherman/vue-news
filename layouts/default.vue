@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="code ml5 mb5 red">Hacker News Reader</h1>
     <header>
       <nav class="flex w-75 justify-around f4 code pa1">
         <nuxt-link class="link underline-hover" to="/">Home</nuxt-link>
